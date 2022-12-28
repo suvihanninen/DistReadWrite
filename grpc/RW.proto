@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package RW;
+option go_package = "https://github.com/suvihanninen/DistReadWrite.git;RW";
+
+
+service ReadWrite {
+    rpc Read (ReadRequest) returns (ReadResponse) {}
+    rpc Write (WriteRequest) returns (WriteResponse) {}
+    
+}
+
+message ReadRequest {
+   
+}
+
+message ReadResponse {
+    int32 value = 1;
+
+}
+
+message WriteRequest {
+    int32 value = 1;
+    
+}
+
+message WriteResponse {
+    string ack = 1; //success, failed
+}
+
