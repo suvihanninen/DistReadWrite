@@ -11,20 +11,21 @@ service ReadWrite {
 }
 
 message ReadRequest {
-   
+    int64 lamport = 1;
 }
 
 message ReadResponse {
     int32 value = 1;
-
+    int64 lamport = 2;
 }
 
 message WriteRequest {
     int32 value = 1;
-    
+    int64 lamport = 2;
 }
 
 message WriteResponse {
     string ack = 1; //success, failed
+    int64 lamport = 2;
 }
 

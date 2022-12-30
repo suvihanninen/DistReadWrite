@@ -1,0 +1,90 @@
+2022/12/30 22:33:07 FEServer 4002: Server on port 4002: Listening at [::]:4002
+2022/12/30 22:33:07 FEServer 4002: We are trying to listen calls from client: 4002
+2022/12/30 22:33:09 FEServer 4001: Server on port 4001: Listening at [::]:4001
+2022/12/30 22:33:09 FEServer 4001: We are trying to listen calls from client: 4001
+2022/12/30 22:33:30 ReplicaServer %!s(int32=5001): writing value: 33
+2022/12/30 22:33:30 FEServer 4001: Write response from 5001: Success
+2022/12/30 22:33:32 Client :4002: 1. read request
+2022/12/30 22:33:32 ReplicaServer 5001: reading value: 33
+2022/12/30 22:33:32 ReplicaServer 5002: reading value: 0
+2022/12/30 22:33:32 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:33:32 ReplicaServer 5003: reading value: 0
+2022/12/30 22:33:32 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:33:32 FEServer 4002: 2Quorum of replicas has value: 0
+2022/12/30 22:33:32 Client :4002: Result from read request: 0
+2022/12/30 22:33:33 ReplicaServer %!s(int32=5002): writing value: 33
+2022/12/30 22:33:33 FEServer 4001: Write response from 5002: Success
+2022/12/30 22:33:34 Client :4002: 2. read request
+2022/12/30 22:33:34 ReplicaServer 5001: reading value: 33
+2022/12/30 22:33:34 ReplicaServer 5002: reading value: 33
+2022/12/30 22:33:34 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:33:34 FEServer 4002: 1Quorum of replicas has value: 33
+2022/12/30 22:33:34 Client :4002: Result from read request: 33
+2022/12/30 22:33:36 Client :4002: 3. read request
+2022/12/30 22:33:36 ReplicaServer 5001: reading value: 33
+2022/12/30 22:33:36 ReplicaServer 5002: reading value: 33
+2022/12/30 22:33:36 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:33:36 FEServer 4002: 1Quorum of replicas has value: 33
+2022/12/30 22:33:36 Client :4002: Result from read request: 33
+2022/12/30 22:33:36 ReplicaServer %!s(int32=5003): writing value: 33
+2022/12/30 22:33:36 FEServer 4001: Write response from 5003: Success
+2022/12/30 22:33:36 Client :4001: Write response: Success
+2022/12/30 22:33:38 Client :4002: 4. read request
+2022/12/30 22:33:38 ReplicaServer 5001: reading value: 33
+2022/12/30 22:33:38 ReplicaServer 5002: reading value: 33
+2022/12/30 22:33:38 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:33:38 FEServer 4002: 1Quorum of replicas has value: 33
+2022/12/30 22:33:38 Client :4002: Result from read request: 33
+2022/12/30 22:33:40 Client :4002: 5. read request
+2022/12/30 22:33:40 ReplicaServer 5001: reading value: 33
+2022/12/30 22:33:40 ReplicaServer 5002: reading value: 33
+2022/12/30 22:33:40 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:33:40 FEServer 4002: 1Quorum of replicas has value: 33
+2022/12/30 22:33:40 Client :4002: Result from read request: 33
+2022/12/30 22:34:01 FEServer 4001: Failure, Replica on port 5002 died
+2022/12/30 22:34:01 FEServer 4001: Write response from 5002: fail
+2022/12/30 22:34:03 Client :4002: 1. read request
+2022/12/30 22:34:03 ReplicaServer 5001: reading value: 33
+2022/12/30 22:34:03 FEServer 4002: Something went wrong when reading value from 5002
+2022/12/30 22:34:03 FEServer 4002: Failure, Replica on port 5002 died
+2022/12/30 22:34:03 ReplicaServer 5003: reading value: 33
+2022/12/30 22:34:03 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:03 FEServer 4002: 1Quorum of replicas has value: 33
+2022/12/30 22:34:03 Client :4002: Result from read request: 33
+2022/12/30 22:34:04 ReplicaServer %!s(int32=5003): writing value: 2
+2022/12/30 22:34:04 FEServer 4001: Write response from 5003: Success
+2022/12/30 22:34:05 Client :4002: 2. read request
+2022/12/30 22:34:05 ReplicaServer 5003: reading value: 2
+2022/12/30 22:34:05 ReplicaServer 5001: reading value: 33
+2022/12/30 22:34:05 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:07 Recalling DistributeRead to get consistent result from the replicas
+2022/12/30 22:34:07 ReplicaServer 5001: reading value: 33
+2022/12/30 22:34:07 ReplicaServer 5003: reading value: 2
+2022/12/30 22:34:07 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:07 ReplicaServer %!s(int32=5001): writing value: 2
+2022/12/30 22:34:07 FEServer 4001: Write response from 5001: Success
+2022/12/30 22:34:07 Client :4001: Write response: Success
+2022/12/30 22:34:09 Recalling DistributeRead to get consistent result from the replicas
+2022/12/30 22:34:09 ReplicaServer 5001: reading value: 2
+2022/12/30 22:34:09 ReplicaServer 5003: reading value: 2
+2022/12/30 22:34:09 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:09 FEServer 4002: 1Quorum of replicas has value: 2
+2022/12/30 22:34:09 Client :4002: Result from read request: 2
+2022/12/30 22:34:11 Client :4002: 3. read request
+2022/12/30 22:34:11 ReplicaServer 5003: reading value: 2
+2022/12/30 22:34:11 ReplicaServer 5001: reading value: 2
+2022/12/30 22:34:11 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:11 FEServer 4002: 1Quorum of replicas has value: 2
+2022/12/30 22:34:11 Client :4002: Result from read request: 2
+2022/12/30 22:34:13 Client :4002: 4. read request
+2022/12/30 22:34:13 ReplicaServer 5001: reading value: 2
+2022/12/30 22:34:13 ReplicaServer 5003: reading value: 2
+2022/12/30 22:34:13 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:13 FEServer 4002: 1Quorum of replicas has value: 2
+2022/12/30 22:34:13 Client :4002: Result from read request: 2
+2022/12/30 22:34:15 Client :4002: 5. read request
+2022/12/30 22:34:15 ReplicaServer 5003: reading value: 2
+2022/12/30 22:34:15 ReplicaServer 5001: reading value: 2
+2022/12/30 22:34:15 FEServer 4002: Finding the value which the quorum of the replicas have
+2022/12/30 22:34:15 FEServer 4002: 1Quorum of replicas has value: 2
+2022/12/30 22:34:15 Client :4002: Result from read request: 2
