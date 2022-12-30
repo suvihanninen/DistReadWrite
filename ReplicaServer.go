@@ -70,7 +70,7 @@ func (RS *ReplicaServer) Write(ctx context.Context, WriteRequest *distWriter.Wri
 	<-RS.lock
 	RS.value = WriteRequest.GetValue()
 	updatedLamport := RS.updateLamportTime(WriteRequest.GetLamport())
-	log.Printf("ReplicaServer %s: writing value: %v", RS.id, RS.value)
+	log.Printf("ReplicaServer %v: writing value: %v", RS.id, RS.value)
 	RS.lock <- true
 	return &distWriter.WriteResponse{Ack: "Success",
 		Lamport: updatedLamport}, nil

@@ -7,7 +7,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"time"
 
 	// this has to be the same as the go.mod module,
 	// followed by the path to the folder the proto file is in.
@@ -60,14 +59,13 @@ func main() {
 			} else if text == "read" {
 
 				readRequest := &distWriter.ReadRequest{}
-				for i := 0; i < 5; i++ {
-					time.Sleep(2 * time.Second)
-					log.Printf("Client %s: %v. read request", port, i+1)
-					value := Read(readRequest, connection, server, port)
-					valueString := strconv.FormatInt(int64(value), 10)
-					log.Printf("Client %s: Result from read request: %s", port, valueString)
-					println("Client " + port + ": Result from READ request: " + valueString)
-				}
+
+				log.Printf("Client %s: read request", port)
+				value := Read(readRequest, connection, server, port)
+				valueString := strconv.FormatInt(int64(value), 10)
+				log.Printf("Client %s: Result from read request: %s", port, valueString)
+				println("Client " + port + ": Result from READ request: " + valueString)
+
 			} else {
 				println("Sorry didn't catch that, try again ")
 			}

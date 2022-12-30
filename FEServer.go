@@ -193,7 +193,7 @@ func (FE *FEServer) DistributeWrite(WriteRequest *distWriter.WriteRequest) (*dis
 	var ackCount int //Find the quorum
 	successUpdate := true
 	for id, server := range FE.replicas {
-		time.Sleep(3 * time.Second)
+		time.Sleep(1 * time.Second)
 		response, err := server.Write(FE.ctx, WriteRequest)
 		if err != nil {
 			log.Printf("FEServer %v: Failure, Replica on port %v died", FE.port, id)
